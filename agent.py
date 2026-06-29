@@ -32,6 +32,8 @@ def ask_ai_json(prompt):
 print(ask_ai("What is RAG in one sentence?"))
 print(ask_ai("Name three Indian cities."))
 
-result = ask_ai_json("Give me 3 Indian cities with their population. Keys: city, population.")
-print(result)
-print(type(result))
+cities = ask_ai_json("Give me 3 Indian cities with their population. Keys: city, population.")
+for c in cities:
+    print(c["city"], "-", c["population"])
+print(cities)
+print(type(cities))
